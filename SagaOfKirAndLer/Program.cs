@@ -10,18 +10,18 @@ namespace SagaOfKirAndLer
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddRazorPages();
-            
+
             builder.Services.AddSingleton<DbGameContext>();
             builder.Services.AddSingleton<DbController>();
             builder.Services.AddSingleton<ServiceGame>();
 
             builder.Services.AddSession();
             // Add services to the container.
-           
-           
+
+
 
             var app = builder.Build();
-            
+
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -56,3 +56,4 @@ namespace SagaOfKirAndLer
         }
     }
 }
+//test
