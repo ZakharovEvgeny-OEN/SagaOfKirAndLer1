@@ -1,0 +1,57 @@
+﻿@page "{sceneId:int}"
+@model SagaOfKirAndLer.Pages.SceneP.ScenePageModel
+
+@{
+    ViewData["Title"] = Model.CurentScene.Title;
+}
+
+@section SceneStyles {
+    @if (!string.IsNullOrEmpty(Model.CurentScene.BackgroundPath))
+    {
+        <style>
+            body {
+                background-image: url('@Url.Content(Model.CurentScene.BackgroundPath)');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+            }
+        </style>
+    }
+}
+
+<h1>@Model.CurentScene.Title</h1>
+
+<div class="scene-container">
+    @if (Model.CurentScene.ImagePath != null)
+    {
+        <div class="scene-image">
+            <img src="@Url.Content(Model.CurentScene.ImagePath)" alt="Сцена" />
+        </div>
+    }
+
+    <div class="scene-content">
+        <div class="scene-description">
+            <p>@Model.CurentScene.Description</p>
+        </div>
+
+        @if (Model.CurentScene.IsEnding)
+        {
+            <ul class="scene-choices">
+                @foreach (var choice in Model.CurentScene.Choices)
+                {
+                    <li>
+                        <a asp-page="/SceneP/ScenePage" asp-route-sceneId="@choice.NextSceneId">@choice.Text</a>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <div class="end-block">
+                <p><strong>Конец истории</strong></p>
+                <a asp-page="/SceneP/ScenePage" asp-route-sceneId="0">Начать сначала</a>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,261 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+html, body {
+    height: 100%;
+}
+body {
+    
+    margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+/* Общий фон и стиль страницы */
+body {
+    background-image: url('/images/backgrounds/dark-parchment.png'); /* текстура пергамента или камня */
+    background-size: contain; /* масштабирует картинку целиком */
+    background-repeat: no-repeat; /* не повторяет */
+    background-position: center; /* по центру экрана */
+    background-attachment: fixed;
+    background-color: #000; /* фон для незаполненных областей */
+
+    font-family: 'Cinzel', serif; /* готический шрифт */
+    color: #e0dccc;
+    padding: 2rem;
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #f4e6be;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 2rem;
+}
+
+/* Форма */
+form {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background-color: rgba(20, 20, 20, 0.8);
+    border: 2px solid #6b4e2f;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 20px #000;
+    z-index: 1000;
+}
+
+/* Метки */
+label {
+    font-weight: bold;
+    color: #c2b280;
+}
+
+/* Инпуты */
+input.form-control {
+    background-color: #2e2e2e;
+    color: #f4f4f4;
+    border: 1px solid #6b4e2f;
+    border-radius: 5px;
+}
+
+/* Кнопки */
+button.btn {
+    background-color: #5c3c1e;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #000;
+    transition: 0.3s ease-in-out;
+}
+
+    button.btn:hover {
+        background-color: #7b512a;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+/* Ошибки */
+p {
+    color: #ff6a6a;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
+.scene-image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 10px;
+    border: 3px solid #cfcfff;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    overflow: hidden;
+}
+
+    
+.scene-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+.scene-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+
+
+/* Правая половина — описание и выбор */
+
+
+    /* при наведении */
+    .scene-image:hover img {
+        transform: scale(1.5); /* увеличение в 1.5 раза */
+    }
+
+/* Анимация появления */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+* {
+    cursor: url('/images/cursor/sword-cursor.png') 16 16, auto;
+}
+.scene-description {
+    background-color: rgba(10, 10, 10, 0.75);
+    padding: 1.5rem;
+    border: 2px solid #443322;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    box-shadow: 0 0 10px #000;
+}
+
+/* Кнопки выбора действия */
+.scene-choices {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+    .scene-choices li {
+        margin: 1rem 0;
+    }
+
+    .scene-choices a {
+        display: block;
+        background: linear-gradient(to right, #3b2d1f, #5e4a32);
+        padding: 1rem;
+        border-radius: 8px;
+        color: #fcebcf;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border: 2px solid #7b512a;
+        box-shadow: 2px 2px 8px #000;
+        transition: all 0.3s ease;
+    }
+
+        .scene-choices a:hover {
+            background: linear-gradient(to right, #6b4e2f, #8a643f);
+            color: #fff3cd;
+            transform: scale(1.03);
+        }
+
+/* Конец истории */
+.end-block {
+    background-color: rgba(30, 10, 10, 0.8);
+    padding: 1.5rem;
+    border: 2px dashed #c09f5c;
+    border-radius: 10px;
+    text-align: center;
+    color: #f4e6be;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+}
+.scene-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+    .scene-container {
+        flex-direction: column;
+    }
+
+    .scene-image,
+    .scene-content {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1;
+}
+
+/* Footer — внизу, не перекрывает */
+footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ccc;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: auto;
+    border-top: 1px solid #555;
+}
