@@ -22,6 +22,20 @@
 
 <h1>@Model.CurentScene.Title</h1>
 
+@if (Model.player != null)
+{
+    <div class="character-cards">
+       
+        
+            <div class="character-card">
+                <img src="@Url.Content()" alt="@character.Name" class="character-image" />
+                <h3>@character.Name</h3>
+                <p>Опыт: @character.Experience</p>
+            </div>
+        
+    </div>
+}
+
 <div class="scene-container">
     @if (Model.CurentScene.ImagePath != null)
     {
@@ -54,4 +68,4 @@
             </div>
         }
     </div>
-</div>
+</div> 

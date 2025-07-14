@@ -10,7 +10,7 @@ namespace SagaOfKirAndLer.Pages.SceneP
         public Scene  CurentScene { get; set; }=new Scene();
         public ServiceGame _serviceGame;
 
-        PlayerProgress player;
+       public PlayerProgress player;
 
         public ScenePageModel(ServiceGame serviceGame)
         {
